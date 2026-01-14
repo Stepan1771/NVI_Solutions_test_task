@@ -1,5 +1,6 @@
 import json
-from typing import Any, Optional
+
+from typing import Any
 
 from redis.asyncio import Redis
 from redis.asyncio.connection import ConnectionPool
@@ -28,7 +29,7 @@ class BaseRedisClient:
             await self.redis.close()
 
 
-    async def get(self, key: str) -> Optional[Any]:
+    async def get(self, key: str) -> Any | None:
         """Получить данные из кэша"""
         if not self.redis:
             return None
