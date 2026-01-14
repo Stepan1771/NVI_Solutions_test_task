@@ -21,7 +21,7 @@ from schemas import (
 
 from core.redis.redis_helper import redis_helper
 
-from app.utils.redis_utils import redis_utils
+from utils import redis_utils
 
 
 class VideosRepo(BaseRepo[Video, VideoCreate, VideoUpdate]):

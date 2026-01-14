@@ -19,13 +19,13 @@ from starlette import status
 from core.config import settings
 from core.database.db_helper import db_helper
 
-from repositories.videos_repo import videos_repo
-
 from schemas import (
     VideoCreate,
     VideoStatusUpdate,
 )
 from schemas.video import VideoRead
+
+from repositories import videos_repo
 
 
 router = APIRouter(
