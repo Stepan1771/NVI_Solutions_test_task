@@ -6,11 +6,10 @@ from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
 from api.middlewares.register_middleware import register_middleware
+from api import router as api_router
 
 from core.config import settings
 from core.database.db_helper import db_helper
-
-from api import router as api_router
 from core.redis.redis_helper import redis_helper
 
 
@@ -27,10 +26,8 @@ main_app = FastAPI(
     lifespan=lifespan,
 )
 
-
 main_app.include_router(api_router, prefix=settings.api.prefix)
 register_middleware(main_app)
-
 
 
 if __name__ == "__main__":
