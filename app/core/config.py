@@ -39,6 +39,10 @@ class DatabaseConfig(BaseModel):
     }
 
 
+class RedisConfig(BaseModel):
+    url: str
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -49,6 +53,7 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     api: ApiPrefix = ApiPrefix()
     db: DatabaseConfig
+    redis: RedisConfig
 
 
 settings = Settings()
