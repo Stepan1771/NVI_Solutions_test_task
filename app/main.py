@@ -11,11 +11,14 @@ from core.config import settings
 from core.database.db_helper import db_helper
 
 from api import router as api_router
+from core.redis.redis_helper import redis_helper
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    await redis_helper.connect()
     yield
+    await redis_helper.disconnect()
     await db_helper.dispose()
 
 
