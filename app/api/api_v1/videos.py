@@ -53,7 +53,7 @@ async def get_videos(
 ):
     videos = await videos_repo.get_videos_filtered(
         session=session,
-        status=status,
+        video_status=status,
         camera_number=camera_number,
         location=location,
         start_time_from=start_time_from,

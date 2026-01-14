@@ -15,7 +15,7 @@ from pydantic import (
 
 class VideoBase(BaseModel):
 
-    @field_validator("video_path")
+    @field_validator("video_path",check_fields=False)
     @classmethod
     def validate_video_path(
             cls,
@@ -25,7 +25,7 @@ class VideoBase(BaseModel):
             raise ValueError("video_path не должен быть пустым")
         return value
 
-    @field_validator("location")
+    @field_validator("location", check_fields=False)
     @classmethod
     def validate_location(
             cls,
@@ -35,7 +35,7 @@ class VideoBase(BaseModel):
             raise ValueError("location не должна быть пустой")
         return value
 
-    @field_validator("duration")
+    @field_validator("duration", check_fields=False)
     @classmethod
     def validate_duration(
             cls,

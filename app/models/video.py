@@ -26,7 +26,7 @@ class Video(Base, IntIdPkMixin):
         nullable=False,
     )
     start_time: Mapped[datetime] = mapped_column(
-        DateTime,
+        DateTime(timezone=True),
         nullable=False,
     )
     duration: Mapped[timedelta] = mapped_column(
