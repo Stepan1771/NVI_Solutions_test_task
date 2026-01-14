@@ -8,11 +8,9 @@ from fastapi.responses import ORJSONResponse
 from api.middlewares.register_middleware import register_middleware
 
 from core.config import settings
+from core.database.db_helper import db_helper
 
 from api import router as api_router
-
-from core.database import db_helper
-
 
 
 @asynccontextmanager
