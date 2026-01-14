@@ -1,6 +1,7 @@
 __all__ = (
     "VideoCreate",
     "VideoUpdate",
+    "VideoStatusUpdate",
     "VideoRead",
 )
 
@@ -8,5 +9,6 @@ __all__ = (
 from .video import (
     VideoCreate,
     VideoUpdate,
+    VideoStatusUpdate,
     VideoRead,
 )

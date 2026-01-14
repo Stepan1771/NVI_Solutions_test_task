@@ -64,6 +64,10 @@ class VideoUpdate(VideoBase):
     status: Literal["new", "transcoded", "recognized"] | None = None
 
 
+class VideoStatusUpdate(VideoBase):
+    status: Literal["new", "transcoded", "recognized"]
+
+
 class VideoRead(VideoBase):
     id: int
     video_path: str
