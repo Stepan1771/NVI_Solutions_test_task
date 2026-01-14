@@ -18,4 +18,4 @@ RUN chmod +x main.py
 
 ENTRYPOINT ["./prestart.sh"]
 
-CMD ["uvicorn", "main:shop_app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:main_app", "--host", "0.0.0.0", "--port", "8000"]
