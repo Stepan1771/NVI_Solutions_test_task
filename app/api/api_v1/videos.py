@@ -53,7 +53,7 @@ async def get_videos(
 ):
     videos = await videos_repo.get_videos_filtered(
         session=session,
-        video_status=status,
+        status=status,
         camera_number=camera_number,
         location=location,
         start_time_from=start_time_from,
@@ -77,9 +77,9 @@ async def get_video_by_id(
         ],
         video_id: int = Path(..., description="ID видео"),
 ):
-    video = await videos_repo.get_by_id(
+    video = await videos_repo.get_video_by_id(
         session=session,
-        model_id=video_id,
+        video_id=video_id,
     )
     return VideoRead.model_validate(video)
 
@@ -97,7 +97,7 @@ async def create_video(
         ],
         create_schema: VideoCreate,
 ):
-    video = await videos_repo.create(
+    video = await videos_repo.create_video(
         session=session,
         create_schema=create_schema,
     )
